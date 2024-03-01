@@ -3,17 +3,41 @@ package easy;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * Class to count the occurrences of each letter in a given string.
+ * Time complexity: O(n)
+ *   - n: length of the input string
+ */
 public class CountLetters {
     public static void main(String[] args) {
-        System.out.println(countLetters("hello")); // {h=1, e=1, l=2, o=1}
+        // Test cases
+        System.out.println(countLetters("hello"));    // {h=1, e=1, l=2, o=1}
         System.out.println(countLetters("aauuchhh")); // {a=2, u=2, c=1, h=3}
-        System.out.println(countLetters("aaaaaa")); // {a=6}
-        System.out.println(countLetters("abc")); // {a=1, b=1, c=1}
-        System.out.println(countLetters("abca")); // {a=2, b=1, c=1}
+        System.out.println(countLetters("aaaaaa"));   // {a=6}
+        System.out.println(countLetters("abc"));      // {a=1, b=1, c=1}
+        System.out.println(countLetters("abca"));     // {a=2, b=1, c=1}
     }
 
+    /**
+     * Counts the occurrences of each letter in the given string.
+     * @param str The input string.
+     * @return A map containing each distinct letter as key and its count as value.
+     */
     public static Map<Character, Integer> countLetters(String str) {
+        // LinkedHashMap is used to maintain the order of insertion
+        Map<Character, Integer> res = new LinkedHashMap<>();
 
-        return null;
+        // Iterate through each character in the string
+        for (char c : str.toCharArray()) {
+            // If the character is already present in the map, increment its count
+            if (res.containsKey(c)) {
+                int count = res.get(c);
+                res.put(c, count + 1);
+            } else { // If the character is not present, add it to the map with count 1
+                res.put(c, 1);
+            }
+        }
+
+        return res;
     }
 }

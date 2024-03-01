@@ -1,15 +1,30 @@
 package easy;
 
+/**
+ * Class to determine whether a given number is even or odd.
+ */
 public class EvenOrOdd {
     public static void main(String[] args) {
-        evenOrOdd(5); // Odd
-        evenOrOdd(2); // Even
+        // Test cases
+        evenOrOdd(5);   // Odd
+        evenOrOdd(2);   // Even
         evenOrOdd(100); // Even
         evenOrOdd(101); // Odd
     }
 
-    public static void evenOrOdd(int num) {
-
+    /**
+     * Determines whether the given number is even or odd.
+     *
+     * @param num The number to check.
+     * @return True if the number is even, false if it's odd.
+     */
+    public static boolean evenOrOdd(int num) {
+        if (num % 2 == 0) {
+            System.out.println("Even");
+            return true;
+        } else {
+            System.out.println("Odd");
+            return false;
+        }
     }
-
 }
