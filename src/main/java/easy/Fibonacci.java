@@ -1,7 +1,5 @@
 package easy;
 
-import java.util.ArrayList;
-
 /**
  * Class to generate and print Fibonacci sequence up to a given number.
  * Count the number of numbers of length 2
@@ -24,26 +22,11 @@ public class Fibonacci {
      * @param n The number of Fibonacci numbers to generate.
      */
     public static void fib(int n) {
-        ArrayList<Integer> fibSequence = new ArrayList<>();
 
-        fibSequence.add(0);
-        fibSequence.add(1);
 
-        // Generate Fibonacci numbers up to n
-        for (int i = 2; i < n; i++) {
-            fibSequence.add(fibSequence.get(i - 1) + fibSequence.get(i - 2));
-        }
 
-        // Count the number of Fibonacci numbers with length more than 1
-        int count = 0;
-        for (int num : fibSequence) {
-            if (String.valueOf(num).length() == 2) {
-                count++;
-            }
-        }
+        //amittsangwan: Type You Code Here
 
-        // Print the Fibonacci sequence and the count of numbers with length equals to 2
-        System.out.println("Fibonacci sequence up to " + n + ": " + fibSequence);
-        System.out.println("Count of Fibonacci numbers with length equals to 2: " + count);
+
     }
 }

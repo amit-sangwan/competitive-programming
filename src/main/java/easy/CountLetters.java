@@ -1,6 +1,5 @@
 package easy;
 
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -24,20 +23,11 @@ public class CountLetters {
      * @return A map containing each distinct letter as key and its count as value.
      */
     public static Map<Character, Integer> countLetters(String str) {
-        // LinkedHashMap is used to maintain the order of insertion
-        Map<Character, Integer> res = new LinkedHashMap<>();
 
-        // Iterate through each character in the string
-        for (char c : str.toCharArray()) {
-            // If the character is already present in the map, increment its count
-            if (res.containsKey(c)) {
-                int count = res.get(c);
-                res.put(c, count + 1);
-            } else { // If the character is not present, add it to the map with count 1
-                res.put(c, 1);
-            }
-        }
 
-        return res;
+        //amittsangwan: Type You Code Here
+
+
+        return null;
     }
 }

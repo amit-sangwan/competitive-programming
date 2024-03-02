@@ -21,16 +21,11 @@ public class PrimeNumber {
      * @return True if the number is prime, false otherwise.
      */
     public static boolean isPrime(int num) {
-        if (num <= 1) {
-            return false; // 0 and 1 are not prime numbers
-        }
 
-        // Iterate from 2 to sqrt(num) to check for divisibility
-        for (int i = 2; i * i <= num; i++) {
-            if (num % i == 0) {
-                return false; // If divisible, it's not prime
-            }
-        }
-        return true; // If no divisor found, it's prime
+
+        //amittsangwan: Type You Code Here
+
+
+        return true;
     }
 }

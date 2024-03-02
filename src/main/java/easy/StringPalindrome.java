@@ -22,18 +22,11 @@ public class StringPalindrome {
      * @return true if the string is a palindrome, false otherwise.
      */
     public static boolean isPal(String str) {
-        int start = 0;
-        int end = str.length() - 1;
 
-        // Iterate from both ends towards the middle of the string
-        while (start < end) {
-            if (str.charAt(start) != str.charAt(end)) {
-                return false; // If characters don't match, it's not a palindrome
-            }
-            start++;
-            end--;
-        }
 
-        return true; // If all characters match, it's a palindrome
+        //amittsangwan: Type You Code Here
+
+
+        return true;
     }
 }

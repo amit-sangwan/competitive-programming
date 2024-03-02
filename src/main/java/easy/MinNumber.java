@@ -21,17 +21,11 @@ public class MinNumber {
      * @return The minimum number in the array.
      */
     public static int min(int[] arrNum) {
-        // Initialize minInt to the maximum possible integer value
-        int minInt = Integer.MAX_VALUE;
 
-        // Iterate through the array
-        for (int element : arrNum) {
-            // Update minInt if a smaller element is found
-            if (minInt > element) {
-                minInt = element;
-            }
-        }
-        // Return the minimum number
-        return minInt;
+
+        //amittsangwan: Type You Code Here
+
+
+        return 1;
     }
 }

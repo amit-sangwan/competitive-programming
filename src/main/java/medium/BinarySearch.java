@@ -29,22 +29,12 @@ public class BinarySearch {
      * @return The index of the target integer in the array if found, or -1 if not found.
      */
     public static int bSearch(int[] arr, int target) {
-        int start = 0; // Start index of the search range
-        int end = arr.length - 1; // End index of the search range
 
-        // Perform binary search until the target is found or the search range is exhausted
-        while (start <= end) {
-            int middle = (start + end) / 2; // Middle index of the search range
 
-            if (arr[middle] == target) {
-                return middle; // Target found, return its index
-            } else if (target < arr[middle]) {
-                end = middle - 1; // Adjust the end of the search range
-            } else {
-                start = middle + 1; // Adjust the start of the search range
-            }
-        }
+        //amittsangwan: Type You Code Here
 
-        return -1; // Target not found
+
+
+        return -1;
     }
 }

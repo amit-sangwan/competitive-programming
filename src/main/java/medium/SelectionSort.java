@@ -23,24 +23,10 @@ public class SelectionSort {
      * @param arr The integer array to be sorted.
      */
     public static void sSort(int[] arr) {
-        // Iterate through the array
-        for (int j = 0; j < arr.length; j++) {
-            // Assume the current element as the minimum
-            int min = arr[j];
-            int minIndex = j;
 
-            // Find the minimum element in the unsorted portion of the array
-            for (int i = j + 1; i < arr.length; i++) {
-                if (min > arr[i]) {
-                    min = arr[i];
-                    minIndex = i;
-                }
-            }
 
-            // Swap the minimum element with the first element of the unsorted portion
-            int temp = arr[j];
-            arr[j] = arr[minIndex];
-            arr[minIndex] = temp;
-        }
+        //amittsangwan: Type You Code Here
+
+
     }
 }

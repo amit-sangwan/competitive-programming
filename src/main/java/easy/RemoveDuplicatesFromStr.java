@@ -20,13 +20,11 @@ public class RemoveDuplicatesFromStr {
      * @return The string with duplicates removed.
      */
     public static String removeDup(String str) {
-        StringBuilder stringBuilder = new StringBuilder();
-        for (char ch : str.toCharArray()) {
-            // Check if the character is already present in the StringBuilder
-            if(!stringBuilder.toString().contains(String.valueOf(ch))){                // If not present, append it to the StringBuilder
-                stringBuilder.append(ch);
-            }
-        }
-        return stringBuilder.toString();
+
+
+        //amittsangwan: Type You Code Here
+
+
+        return null;
     }
 }

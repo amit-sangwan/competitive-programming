@@ -7,7 +7,6 @@ package easy;
  */
 public class FizzBuzz {
     public static void main(String[] args) {
-        fizzBuzz();
         // Additional test cases
         System.out.println("Additional Test Cases:");
         fizzBuzz(15); // Test case for 15
@@ -17,34 +16,12 @@ public class FizzBuzz {
     /**
      * Prints numbers from 1 to 100 with the FizzBuzz rules.
      */
-    public static void fizzBuzz() {
-        fizzBuzz(100); // Call the overloaded method with 100 as the argument
+    public static void fizzBuzz(int num) {
+
+
+        //amittsangwan: Type You Code Here
+
+
     }
 
-    /**
-     * Prints numbers from 1 to n with the FizzBuzz rules.
-     *
-     * @param n The upper limit of numbers to print.
-     */
-    public static void fizzBuzz(int n) {
-        // Iterate from 1 to n
-        for (int i = 1; i <= n; i++) {
-            // Check if the number is divisible by both 3 and 5
-            if (i % 3 == 0 && i % 5 == 0) {
-                System.out.println("FizzBuzz");
-            }
-            // Check if the number is divisible by 3
-            else if (i % 3 == 0) {
-                System.out.println("Fizz");
-            }
-            // Check if the number is divisible by 5
-            else if (i % 5 == 0) {
-                System.out.println("Buzz");
-            }
-            // Otherwise, print the number
-            else {
-                System.out.println(i);
-            }
-        }
-    }
 }
