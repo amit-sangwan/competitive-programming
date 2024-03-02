@@ -11,19 +11,11 @@ public class ReverseStr {
 
     // Function to reverse a string
     public static String revStr(String str) {
-        // Create a StringBuilder object to store the reversed string
-        StringBuilder stringBuilder = new StringBuilder();
 
-        // Convert the input string to a character array
-        char[] arr = str.toCharArray();
 
-        // Traverse the character array from the end to the beginning
-        for (int i = arr.length - 1; i >= 0; i--) {
-            // Append each character to the StringBuilder object
-            stringBuilder.append(arr[i]);
-        }
+        //amittsangwan: Type You Code Here
 
-        // Convert the StringBuilder object to a string and return
-        return stringBuilder.toString();
+
+        return null;
     }
 }

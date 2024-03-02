@@ -17,20 +17,12 @@ public class ReverseArray {
 
     // Function to reverse the array
     public static int[] revArr(int[] arr) {
-        // Initialize start and end pointers
-        int start = 0;
-        int end = arr.length - 1;
 
-        // Swap elements from start and end
-        while (start < end) {
-            int temp = arr[start];
-            arr[start] = arr[end];
-            arr[end] = temp;
-            start++;
-            end--;
-        }
 
-        // Return the reversed array
-        return arr;
+        //amittsangwan: Type You Code Here
+
+
+        return null;
     }
+
 }

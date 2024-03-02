@@ -29,18 +29,11 @@ public class SumOfTwo {
      * @return An array containing the two numbers that sum up to the target. If no such pair exists, returns an array of two zeros.
      */
     public static int[] sumOfTwo(int[] arr, int target) {
-        int[] sumOfTwoArr = new int[2];
 
-        // Iterate through the array to find two numbers that sum up to the target
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
-                if (arr[i] + arr[j] == target) {
-                    sumOfTwoArr[0] = arr[i];
-                    sumOfTwoArr[1] = arr[j];
-                }
-            }
-        }
 
-        return sumOfTwoArr;
+        //amittsangwan: Type You Code Here
+
+
+        return null;
     }
 }

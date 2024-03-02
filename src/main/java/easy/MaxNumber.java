@@ -20,17 +20,11 @@ public class MaxNumber {
      * @return The maximum number in the array.
      */
     public static int max(int[] arr) {
-        // Initialize maxInt to the first element of the array
-        int maxInt = arr[0];
 
-        // Iterate through the array
-        for (int element : arr) {
-            // Update maxInt if a greater element is found
-            if (maxInt < element) {
-                maxInt = element;
-            }
-        }
-        // Return the maximum number
-        return maxInt;
+
+
+        //amittsangwan: Type You Code Here
+
+        return 1;
     }
 }

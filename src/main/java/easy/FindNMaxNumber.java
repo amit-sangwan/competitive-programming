@@ -1,7 +1,5 @@
 package easy;
 
-import java.util.Arrays;
-
 /**
  * Class to find the nth maximum number in an array.
  */
@@ -21,13 +19,13 @@ public class FindNMaxNumber {
      * @return The nth maximum number, or 0 if n is greater than the length of the array.
      */
     public static int nMax(int[] arr, int n) {
-        // Check if the array length is less than n
-        if (arr.length < n) {
-            return 0;
-        }
-        // Sort the array
-        Arrays.sort(arr);
-        // Return the nth maximum number
-        return arr[arr.length - n];
+
+
+
+        //amittsangwan: Type You Code Here
+
+
+
+        return 1;
     }
 }

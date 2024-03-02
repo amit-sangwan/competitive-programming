@@ -24,17 +24,11 @@ public class PalindromeChecker {
      * @return True if the input is a palindrome, false otherwise.
      */
     public static boolean isPalindrome(Object input) {
-        String str = String.valueOf(input);
-        int start = 0;
-        int end = str.length() - 1;
 
-        while (start < end) {
-            if (str.charAt(start) != str.charAt(end)) {
-                return false;
-            }
-            start++;
-            end--;
-        }
+
+        //amittsangwan: Type You Code Here
+
+
         return true;
     }
 }

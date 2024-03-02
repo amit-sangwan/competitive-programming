@@ -19,12 +19,12 @@ public class EvenOrOdd {
      * @return True if the number is even, false if it's odd.
      */
     public static boolean evenOrOdd(int num) {
-        if (num % 2 == 0) {
-            System.out.println("Even");
-            return true;
-        } else {
-            System.out.println("Odd");
-            return false;
-        }
+
+
+
+        //amittsangwan: Type You Code Here
+
+
+        return true;
     }
 }

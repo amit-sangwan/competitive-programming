@@ -1,7 +1,5 @@
 package easy;
 
-import java.util.Arrays;
-
 /**
  * A class to determine whether two strings are anagrams of each other.
  */
@@ -26,15 +24,11 @@ public class TwoStringAnagram {
      * @return true if the strings are anagrams, false otherwise.
      */
     public static boolean isAnagram(String str, String str1) {
-        // Convert the strings to character arrays
-        char[] strArr = str.toCharArray();
-        char[] strArr2 = str1.toCharArray();
 
-        // Sort the character arrays
-        Arrays.sort(strArr);
-        Arrays.sort(strArr2);
 
-        // Check if the sorted arrays are equal
-        return Arrays.equals(strArr2, strArr);
+        //amittsangwan: Type You Code Here
+
+
+        return true;
     }
 }
