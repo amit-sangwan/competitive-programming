@@ -1,0 +1,72 @@
+******************** Collections Tree wil Underlying Data Structure , Initial Size , Increment , and load factor *******
+
+Interface: Collection (N/A)
+├── Interface: List (N/A)
+│   ├── Class: ArrayList (Array, 10 elements, doubles current size, N/A)
+│   ├── Class: LinkedList (Doubly Linked List, N/A)
+│   ├── Class: Vector (Array, 10 elements, doubles current size, N/A)
+│   └── Class: Stack (Array, 10 elements, doubles current size, N/A)
+├── Interface: Set (N/A)
+│   ├── Class: HashSet (Hash table, 16 buckets, approximately doubles size, 0.75)
+│   ├── Class: LinkedHashSet (Hash table with linked list, N/A)
+│   └── Class: TreeSet (Red-Black Tree, N/A)
+├── Interface: Queue (N/A)
+│   ├── Class: PriorityQueue (Heap, N/A)
+│   └── Class: LinkedList (Doubly Linked List, N/A)
+├── Interface: Deque (N/A)
+│   └── Class: ArrayDeque (Array, N/A)
+└── Interface: Map (N/A)
+    ├── Class: HashMap (Array of buckets, 16 buckets, approximately doubles size, 0.75)
+    ├── Class: TreeMap (Red-Black Tree, N/A)
+    ├── Class: LinkedHashMap (Hash table with linked list, 16 buckets, approximately doubles size, 0.75)
+    └── Class: Hashtable (Array of buckets, 11 buckets, doubles current size + 1, N/A)
+
+************************************************************************************************************************
+
+Common Collection Methods:
+
+- add(E e)
+- addAll(Collection<? extends E> c)
+- remove(Object o)
+- removeAll(Collection<?> c)
+- clear()
+- size()
+- contains(Object o)
+- containsAll(Collection<?> c)
+- iterator()
+- forEach(Consumer<? super E> action)
+- toArray()
+- equals(Object o)
+- hashCode()
+- toString()
+
+************************************************************************************************************************
+
+ArrayList -> Best For Retrieval Operation
+             Not good for insertion & delete from middle ( internally several shifts will be required )
+
+LinkedList -> Best For insertion and deletion from the middle , it is preferred.
+              NOT good for retrieval operations as nth element address is stored in n-1 th element and so on..!
+
+LinkedList Methods:
+
+- addFirst(E e)
+- addLast(E e)
+- getFirst():
+- getLast()
+- removeFirst()
+- removeLast()
+
+- offer(E e): Adds the specified element as the last element of the list (similar to addLast() but returns a boolean).
+- offerFirst(E e): Inserts the specified element at the front of this list (similar to addFirst() but returns a boolean).
+- offerLast(E e): Inserts the specified element at the end of this list (similar to addLast() but returns a boolean).
+
+- poll(): Retrieves and removes the first element of this list (similar to removeFirst() but returns null if the list is empty).
+- pollFirst(): Retrieves and removes the first element of this list (similar to removeFirst() but returns null if the list is empty).
+- pollLast(): Retrieves and removes the last element of this list (similar to removeLast() but returns null if the list is empty).
+
+- peek(): Retrieves, but does not remove, the first element of this list (returns null if the list is empty).
+- peekFirst(): Retrieves, but does not remove, the first element of this list (returns null if the list is empty).
+- peekLast(): Retrieves, but does not remove, the last element of this list (returns null if the list is empty).
+
+- descendingIterator(): Returns an iterator over the elements in this list in reverse sequential order.
