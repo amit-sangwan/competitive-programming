@@ -1,4 +1,4 @@
-**SDET Coding Interview Questions**
+**SDET Coding Questions**
 
 **  ********  NOTE: Switch To the Implementation Branch for implementations  ******** **
 
