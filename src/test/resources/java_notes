@@ -1,3 +1,649 @@
+
+*************************************************** Variables **********************************************************
+
+Definition: A variable is a named memory location that stores a value.
+
+Syntax:
+dataType variableName = value;
+
+Types of Variables:
+
+Local Variable → Declared inside a method, constructor, or block.
+Lifetime: only within that block.
+
+void method() {
+    int x = 10; // local
+}
+
+
+Instance Variable → Declared inside a class but outside methods. Belongs to object.
+class Test {
+    int count; // instance variable
+}
+
+Static Variable (Class Variable) → Declared with static, shared across all objects.
+
+class Test {
+    static int counter = 0;
+}
+*************************************************** Data Types **********************************************************
+
+Java is statically typed → every variable’s type must be declared.
+
+1. Primitive Data Types
+
+8 types (stored by value, not objects).
+
+Type	Size	    Range (Approx)	                        Default	Example
+byte	1 byte	    -128 to 127	0	                        byte b = 100;
+short	2 bytes	    -32,768 to 32,7670	                    short s = 1000;
+int  	4 bytes	    -2³¹ to 2³¹-1	0	                    int n = 100000;
+long	8 bytes	    -2⁶³ to 2⁶³-1	0L	                    long l = 100000L;
+float	4 bytes	    ~6–7 decimal digits	0.0f    	        float f = 3.14f;
+double	8 bytes	    ~15–16 decimal digits	0.0d	        double d = 3.14159;
+char	2 bytes	    Unicode (0 to 65,535)	'\u0000'        char c = 'A';
+boolean	1 bit	    true/false	false	                    boolean flag = true;
+
+✅ Notes:
+
+Use L for long, f for float, d optional for double.
+char stores Unicode → 'A', '\u0041'.
+boolean is NOT 0/1 → strictly true/false.
+
+2. Non-Primitive (Reference) Data Types
+
+Objects, arrays, strings, etc.
+    Store references (memory addresses).
+
+Examples:
+
+    String str = "Hello";      // String object
+    int[] arr = {1, 2, 3};     // Array object
+    Integer num = 10;          // Wrapper class
+
+Type Casting
+
+Converting one type to another.
+
+Implicit (Widening) → smaller → larger (safe).
+
+int a = 10;
+double b = a; // int -> double
+
+
+Explicit (Narrowing) → larger → smaller (may lose data).
+
+double x = 10.5;
+int y = (int) x; // double -> int
+
+Useful One-Liners
+Declare multiple variables: int a=5, b=10;
+Constants: final int MAX = 100;
+
+Default values apply only to instance/static vars, not locals.
+
+
+*************************************************** Control & Conditional Statements **********************************************************
+
+1. Control Statements
+
+Control statements change the normal execution flow of a program.
+
+a) Decision-making statements
+
+Used to execute code blocks based on conditions.
+
+if statement
+
+if (condition) {
+    // code executes if condition is true
+}
+
+
+if-else statement
+
+if (condition) {
+    // code if true
+} else {
+    // code if false
+}
+
+
+if-else-if ladder
+
+if (condition1) {
+    // code
+} else if (condition2) {
+    // code
+} else {
+    // default code
+}
+
+
+switch statement (better for multiple conditions on a single variable)
+
+switch (expression) {
+    case value1:
+        // code
+        break;
+    case value2:
+        // code
+        break;
+    default:
+        // code
+}
+
+
+*************************************************** Loops **********************************************************
+
+Used to repeat a block of code.
+
+for loop
+
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+
+while loop
+
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+
+
+do-while loop (executes at least once)
+
+int i = 0;
+do {
+    System.out.println(i);
+    i++;
+} while (i < 5);
+
+
+Enhanced for loop (for-each)
+
+int[] arr = {10, 20, 30};
+for (int num : arr) {
+    System.out.println(num);
+}
+
+*************************************************** Jump Statements **********************************************************
+
+Control the flow of loops.
+
+break – exits from the loop/switch.
+
+for (int i = 0; i < 5; i++) {
+    if (i == 3) break;
+    System.out.println(i);
+}
+
+
+continue – skips current iteration, goes to next.
+
+for (int i = 0; i < 5; i++) {
+    if (i == 3) continue;
+    System.out.println(i);
+}
+
+
+return – exits from a method and optionally returns a value.
+
+public int add(int a, int b) {
+    return a + b;
+}
+
+
+✅ Quick Revision Notes
+
+if-else → Two-way decision.
+
+switch → Multi-way decision.
+
+for → Definite number of iterations.
+
+while → Unknown number of iterations.
+
+do-while → Executes at least once.
+
+break → Exit loop/switch.
+
+continue → Skip iteration.
+
+return → Exit method.
+
+*************************************************** Strings **********************************************************
+
+A String is a sequence of characters, stored as an object of the String class (in java.lang package).
+
+Strings are immutable → once created, they cannot be changed.
+
+String Creation
+String s1 = "Hello";                 // String literal (stored in String Pool)
+String s2 = new String("Hello");     // Using new keyword (stored in heap)
+
+Common String Methods
+==========================
+
+Method                Description                                    Example
+-----------------------------------------------------------------------------------------
+length()              Returns length of string                       "Hello".length() → 5
+charAt(int index)     Returns char at given index (0-based)          "Java".charAt(2) → 'v'
+substring(beg,end)    Returns substring [beg, end)                   "abcdef".substring(1,4) → "bcd"
+contains(str)         Checks if substring exists                     "Hello".contains("ell") → true
+equals(str)           Compares content                               "abc".equals("abc") → true
+equalsIgnoreCase(str) Compares ignoring case                         "Java".equalsIgnoreCase("java") → true
+compareTo(str)        Lexicographic compare                          "abc".compareTo("abd") → -1
+indexOf(ch)           First index of char/substring                  "banana".indexOf('a') → 1
+lastIndexOf(ch)       Last index of char/substring                   "banana".lastIndexOf('a') → 5
+startsWith(prefix)    Checks prefix                                  "hello".startsWith("he") → true
+endsWith(suffix)      Checks suffix                                  "hello".endsWith("lo") → true
+toUpperCase()         Converts to uppercase                          "java".toUpperCase() → "JAVA"
+toLowerCase()         Converts to lowercase                          "JAVA".toLowerCase() → "java"
+trim()                Removes leading/trailing spaces                "  hi  ".trim() → "hi"
+replace(old,new)      Replaces characters                            "java".replace('a','o') → "jovo"
+split(regex)          Splits string into array                       "a,b,c".split(",") → {"a","b","c"}
+isEmpty()             Checks if string is empty (length()==0)        "".isEmpty() → true
+
+=============================
+ StringBuilder & StringBuffer
+=============================
+- Mutable alternatives to String (can be modified).
+- StringBuilder → Faster, not thread-safe.
+- StringBuffer → Slower, thread-safe.
+
+Both are mutable alternatives to String.
+
+Common Methods:
+append(), insert(), delete(), reverse(), toString()
+
+Example:
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");
+System.out.println(sb);   // Output: Hello World
+
+String Formatting
+String name = "Amit";
+int age = 33;
+System.out.printf("Name: %s, Age: %d", name, age);
+// Output: Name: Amit, Age: 33
+
+*************************************************** Arrays **********************************************************
+An array is a collection of elements of the same type stored in contiguous memory locations.
+
+Fixed size (cannot grow/shrink dynamically).
+
+Index starts from 0.
+
+Can hold primitive data types or objects.
+
+1. Declaring & Initializing Arrays
+// Declaration
+int[] arr;          // preferred
+int arr2[];         // also valid
+
+// Allocation
+arr = new int[5];   // array of size 5, default values = 0
+
+// Initialization
+int[] nums = {1, 2, 3, 4, 5};  // directly assign values
+
+2. Accessing Elements
+System.out.println(nums[0]);   // prints 1
+nums[2] = 10;                  // update element at index 2
+
+3. Array Length
+System.out.println(nums.length);   // prints number of elements
+
+4. Traversing Arrays
+// For loop
+for (int i = 0; i < nums.length; i++) {
+    System.out.print(nums[i] + " ");
+}
+
+// Enhanced for loop
+for (int n : nums) {
+    System.out.print(n + " ");
+}
+
+5. Multidimensional Arrays
+int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+System.out.println(matrix[1][2]);  // 6
+
+6. Useful Methods (Arrays Class)
+import java.util.Arrays;
+
+int[] arr = {5, 2, 8, 1, 3};
+
+// Sorting
+Arrays.sort(arr);
+
+// Searching (binary search) - array must be sorted
+int idx = Arrays.binarySearch(arr, 3);
+
+// Fill
+Arrays.fill(arr, 9);   // fills array with 9
+
+// Compare
+boolean equal = Arrays.equals(arr1, arr2);
+
+// Convert to String
+System.out.println(Arrays.toString(arr)); // prints [1, 2, 3]
+
+7. Common Array Interview Tricks
+
+Reverse an array
+
+for (int i = 0, j = arr.length - 1; i < j; i++, j--) {
+    int temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+}
+
+
+Find max/min
+
+int max = arr[0];
+for (int i : arr) {
+    if (i > max) max = i;
+}
+
+
+Sum of elements
+
+int sum = 0;
+for (int i : arr) sum += i;
+
+
+✅ Quick Recap (One-liners)
+
+int[] arr = new int[5]; → Declares array of size 5
+
+arr.length → gives size
+
+Arrays.sort(arr); → sort
+
+Arrays.toString(arr) → print array
+
+Fixed size, homogeneous elements, zero-based index
+
+Array Methods in Java
+1. Arrays.toString(array)
+
+Converts array to string representation.
+
+int[] arr = {1, 2, 3};
+System.out.println(Arrays.toString(arr)); // [1, 2, 3]
+
+2. Arrays.sort(array)
+
+Sorts array in ascending order.
+
+int[] arr = {3, 1, 2};
+Arrays.sort(arr);
+System.out.println(Arrays.toString(arr)); // [1, 2, 3]
+
+3. Arrays.binarySearch(array, key)
+
+Searches for key in sorted array.
+
+int[] arr = {1, 2, 3, 4};
+int index = Arrays.binarySearch(arr, 3);
+System.out.println(index); // 2
+
+4. Arrays.equals(arr1, arr2)
+
+Compares if two arrays are equal.
+
+int[] a = {1, 2, 3};
+int[] b = {1, 2, 3};
+System.out.println(Arrays.equals(a, b)); // true
+
+5. Arrays.fill(array, value)
+
+Fills array with given value.
+
+int[] arr = new int[5];
+Arrays.fill(arr, 7);
+System.out.println(Arrays.toString(arr)); // [7, 7, 7, 7, 7]
+
+6. Arrays.copyOf(array, newLength)
+
+Copies array into new array with new length.
+
+int[] arr = {1, 2, 3};
+int[] copy = Arrays.copyOf(arr, 5);
+System.out.println(Arrays.toString(copy)); // [1, 2, 3, 0, 0]
+
+7. Arrays.copyOfRange(array, start, end)
+
+Copies range from array.
+
+int[] arr = {10, 20, 30, 40, 50};
+int[] sub = Arrays.copyOfRange(arr, 1, 4);
+System.out.println(Arrays.toString(sub)); // [20, 30, 40]
+
+8. Arrays.deepEquals(arr1, arr2)
+
+Compares nested arrays (2D+).
+
+int[][] a = {{1,2}, {3,4}};
+int[][] b = {{1,2}, {3,4}};
+System.out.println(Arrays.deepEquals(a, b)); // true
+
+9. Arrays.deepToString(array)
+
+Converts multidimensional array to string.
+
+int[][] arr = {{1,2}, {3,4}};
+System.out.println(Arrays.deepToString(arr)); // [[1, 2], [3, 4]]
+
+10. Arrays.parallelSort(array)
+
+Sorts large arrays faster using parallelism.
+
+int[] arr = {9, 7, 5, 3, 1};
+Arrays.parallelSort(arr);
+System.out.println(Arrays.toString(arr)); // [1, 3, 5, 7, 9]
+
+*************************************************** Array List and HashMaps **********************************************************
+
+List (Interface)
+
+Definition: Ordered collection of elements (allows duplicates).
+
+Implements: ArrayList, LinkedList, Vector.
+
+Syntax:
+
+List<String> list = new ArrayList<>();
+
+
+Key Points:
+
+Index-based (like arrays, but dynamic size).
+
+Allows duplicate values.
+
+Maintains insertion order.
+
+🔹 ArrayList (Class - implements List)
+
+Definition: Resizable array implementation of List.
+
+Syntax:
+
+ArrayList<Integer> arr = new ArrayList<>();
+
+
+Important Methods:
+
+add(E e) → Add element
+
+add(int index, E e) → Add at index
+
+get(int index) → Get element
+
+set(int index, E e) → Update element
+
+remove(int index) → Remove at index
+
+remove(Object o) → Remove by value
+
+contains(Object o) → Check existence
+
+size() → Number of elements
+
+isEmpty() → Check if empty
+
+clear() → Remove all elements
+
+indexOf(Object o) → First occurrence index
+
+lastIndexOf(Object o) → Last occurrence index
+
+toArray() → Convert to array
+
+Iteration:
+
+for (int i : arr) { System.out.println(i); }
+arr.forEach(System.out::println);
+
+
+🔹 HashMap (Class - implements Map)
+
+Definition: Stores key-value pairs, no duplicate keys allowed, values can repeat.
+
+Syntax:
+
+HashMap<Integer, String> map = new HashMap<>();
+
+
+Important Methods:
+
+put(K key, V value) → Add/replace value
+
+putIfAbsent(K, V) → Add only if key not present
+
+get(K key) → Get value for key
+
+getOrDefault(K, defaultValue) → Get with default
+
+containsKey(K key) → Check key
+
+containsValue(V value) → Check value
+
+remove(K key) → Remove entry
+
+remove(K key, V value) → Remove if key-value matches
+
+size() → Number of entries
+
+isEmpty() → Check empty
+
+clear() → Remove all
+
+keySet() → All keys
+
+values() → All values
+
+entrySet() → All key-value pairs
+
+forEach((k,v) -> ...) → Iterate easily
+
+Example:
+
+map.put(1, "Amit");
+map.put(2, "Sangwan");
+map.forEach((k,v) -> System.out.println(k + " -> " + v));
+
+******************* Array List and HashMaps  Important Methods **********************************************************
+
+
+add(E e) → Adds element at the end.
+
+add(int index, E e) → Inserts element at a specific position.
+
+get(int index) → Returns element at given index.
+
+set(int index, E e) → Replaces element at given index.
+
+remove(int index) → Removes element at index.
+
+remove(Object o) → Removes first occurrence of given object.
+
+size() → Returns number of elements.
+
+isEmpty() → Checks if list is empty.
+
+contains(Object o) → Checks if element exists.
+
+indexOf(Object o) → Returns first index of object, -1 if not found.
+
+lastIndexOf(Object o) → Returns last index of object.
+
+clear() → Removes all elements.
+
+subList(int from, int to) → Returns a portion of the list.
+
+toArray() → Converts ArrayList to array.
+
+sort(Comparator c) → Sorts list with custom comparator.
+
+HashMap – Important Methods
+
+put(K key, V value) → Inserts key-value pair (replaces value if key exists).
+
+putIfAbsent(K key, V value) → Inserts only if key not present.
+
+get(Object key) → Returns value for key, or null if not found.
+
+getOrDefault(Object key, V defaultValue) → Returns value or default.
+
+remove(Object key) → Removes entry for key.
+
+remove(Object key, Object value) → Removes entry only if key maps to value.
+
+containsKey(Object key) → Checks if key exists.
+
+containsValue(Object value) → Checks if value exists.
+
+keySet() → Returns all keys.
+
+values() → Returns all values.
+
+entrySet() → Returns set of key-value pairs.
+
+replace(K key, V value) → Replaces value for given key.
+
+replace(K key, V oldValue, V newValue) → Replaces only if oldValue matches.
+
+size() → Returns number of key-value pairs.
+
+isEmpty() → Checks if map is empty.
+
+clear() → Removes all entries.
+
+forEach(BiConsumer action) → Iterates over entries (Java 8+).
+
+merge(K key, V value, BiFunction remappingFunction) → Combines values.
+
+compute(K key, BiFunction) → Updates value for key.
+
+computeIfAbsent(K key, Function) → Adds value if key missing.
+
+computeIfPresent(K key, BiFunction) → Updates only if key exists.
+
+
+
 ******************** Collections Tree wil Underlying Data Structure , Initial Size , Increment , and load factor *******
 
 Interface: Collection (N/A)
