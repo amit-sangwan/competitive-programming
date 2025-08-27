@@ -1,0 +1,167 @@
+1.)*********************************************** add-binary *******************************************************
+
+int digit = '5' - '0';   // 53 - 48 = 5
+
+Walk from right → left.
+
+Keep a carry (or borrow for subtraction).
+
+For base B, each step:
+
+sum = carry + digitA + digitB
+outDigit = sum % B
+carry    = sum / B
+
+Same pattern works for base-2 (binary), base-10 (decimal), base-16 (hex), or any base.
+
+2.) *********************************************** Two Sum *******************************************************
+
+💡 "Store what I’ve seen (map), check what I need (complement)."
+
+Store numbers in a map: value → index.
+
+For each nums[i], check if target - nums[i] exists in map.
+
+If yes → return indices.
+
+3.) *********************************************** Find Pivot Index ***********************************************
+
+At each index i, the right sum can be derived as:
+
+rightSum=totalSum−leftSum−nums[i]
+leftSum += num[i]
+
+If leftSum == rightSum, return i (pivot index).
+
+If no pivot index found, return -1.
+
+The sum of all elements between 1 and x inclusively equals the sum of all elements between x and n inclusively.
+     // Keep this in mind: Pivot = perfect square trick saves time in interviews.
+        int sumOfAllElementsTillN = (n*(n+1)/2);
+            if(sqroot*sqroot == sumOfAllElementsTillN){
+                        return sqroot;
+                    }
+
+4.) *********************************************** Find Pivot Integer ***********************************************
+
+- Calculate the sum of integers from 1 to n:
+- Calculate the square root of the sum.
+- Check if the square root is an integer:
+
+**If s * s equals the sum, then s is the pivot integer. Otherwise, there is no pivot
+**
+
+5.) *********************************************** Merged Sorted Array ***********************************************
+Use 3 pointers:
+
+i = m - 1 → last valid element in nums1.
+
+j = n - 1 → last element in nums2.
+
+k = m + n - 1 → last index in nums1 (including extra space).
+
+Compare nums1[i] and nums2[j]. Put the larger one at nums1[k].
+
+Decrement pointers accordingly.
+
+Continue until all elements are merged.
+
+class Solution {
+
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int i = m - 1;       // pointer for nums1
+        int j = n - 1;       // pointer for nums2
+        int k = m + n - 1;   // pointer for merged array (end of nums1)
+
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] > nums2[j]) {
+                nums1[k--] = nums1[i--];
+            } else {
+                nums1[k--] = nums2[j--];
+            }
+        }
+
+        // If any elements left in nums2
+        while (j >= 0) {
+            nums1[k--] = nums2[j--];
+        }
+        // No need to copy remaining nums1 elements, they’re already in place
+    }
+}
+
+6.) *********************************************** valid-parentheses ***********************************************
+
+**Stack
+
+Push all opening brackets.
+
+For a closing bracket:
+
+If stack is empty → invalid.
+
+Else, peek top → if matches, pop; else → invalid.
+
+At the end, if stack is empty → valid; else → invalid.
+
+         Stack<Character> stack = new Stack();
+         stack.push(s.charAt(i))
+         stack.pop();
+         stack.peek()
+         stack.isEmpty()
+
+Always check stack is not empty before peek().
+
+Return false immediately on mismatch.
+
+6.) *********************************************** Merge Two Sorted Lists ***********************************************
+Trick / Mind Map:
+
+Dummy node → simplifies head handling.
+
+Two pointers → compare list1 and list2, attach smaller to current.next.
+
+Move current after attaching node.
+
+Append remaining nodes after one list exhausted.
+
+Return dummy.next → head of merged list.
+
+Complexity: Time O(n + m), Space O(1)
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+
+class Solution {
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) {
+    ListNode dummy = new ListNode();
+    ListNode current = dummy ;
+
+    while(list1 != null && list2 != null){
+
+        if(list1.val < list2.val){
+            current.next = list1 ;
+            list1 = list1.next ;
+        }else{
+            current.next = list2 ;
+            list2 = list2.next ;
+        }
+        current = current.next; // move current forward
+    }
+
+    if(list1 != null){current.next = list1;}
+    if(list2 != null){current.next = list2;}
+
+    return dummy.next ;
+    }
+
+}
+
+7.) *********************************************** Merge Two Sorted Lists ***********************************************
